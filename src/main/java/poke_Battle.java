@@ -1,4 +1,6 @@
 import javax.swing.JButton;
+import java.util.Random;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -130,7 +132,7 @@ public class poke_Battle extends javax.swing.JFrame {
         getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 400, 170, 50));
 
         jButton4.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
-        jButton4.setText("POTION (3x)");
+        jButton4.setText("POTION");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton4ActionPerformed(evt);
@@ -149,21 +151,29 @@ public class poke_Battle extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 870, 570));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+        Random rand = new Random();
+        int foeDamage = (int) ((foeLevel *0.1 * foePoke.getAttack() * 0.1) - myPoke.getDefense()* 0.1);
+        int int_random = rand.nextInt(1000); 
+        if (int_random < 200){
+            System.out.println("Fugiu!");
+            winButton.setText("Fugiu!");
+            winButton.setVisible(true);
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        attackEvent = true;
-        int damage = (int) ((userLevel *0.1 * myPoke.getAttack() * 0.1) + myPoke.getDefense()* 0.1);
-        int foeDamage = (int) ((foeLevel *0.1 * foePoke.getAttack() * 0.1) + foePoke.getDefense()* 0.1);
-        jProgressBar2.setValue(foeHP - damage);
-        jProgressBar3.setValue(mypokeHP - foeDamage);
-        foeHP = foeHP - damage;
-        mypokeHP = mypokeHP - foeDamage;
-        if (foeHP <= 0){
+        }
+        else{
+            System.out.println("Nem fugiu!");
+            mypokeHP = mypokeHP - foeDamage;
+            jProgressBar3.setValue(mypokeHP - foeDamage);
+            checkWin();
+        }
+      
+    }//GEN-LAST:event_jButton1ActionPerformed
+    private void checkWin(){
+            if (foeHP <= 0){
             winButton.setVisible(true);
             System.out.println("Você venceu!");
         }
@@ -173,6 +183,18 @@ public class poke_Battle extends javax.swing.JFrame {
             System.out.println("Você perdeu!");
         }
 
+    }
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        attackEvent = true;
+        int damage = (int) ((userLevel *0.1 * myPoke.getAttack() * 0.1) - foePoke.getDefense()* 0.1);
+        int foeDamage = (int) ((foeLevel *0.1 * foePoke.getAttack() * 0.1) - myPoke.getDefense()* 0.1);
+        foeHP = foeHP - damage;
+        jProgressBar2.setValue(foeHP);
+        mypokeHP = mypokeHP - foeDamage;
+        jProgressBar3.setValue(mypokeHP);
+        checkWin();
+        System.out.println(mypokeHP);
+        System.out.println(foeHP);
        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -188,9 +210,10 @@ public class poke_Battle extends javax.swing.JFrame {
         if (potion > 0){
         potion = potion - 1;
         mypokeHP = mypokeHP + 20;
-        jProgressBar3.setValue(mypokeHP + 20);
+        jProgressBar3.setValue(mypokeHP);
         if (mypokeHP >100){
         mypokeHP = 100;
+        jProgressBar3.setValue(mypokeHP);
         }
         System.out.println(mypokeHP);
         }
