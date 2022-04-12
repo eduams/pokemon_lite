@@ -10,13 +10,14 @@
 public class Pokemono {
     private String name;
     private String type;
-    private double hp = 200;
+    private double hp = 100;
     private double defense;
     private double attack;
     private double speed;
     private int level;
     //construtor
-    public Pokemono(String name, String type, int level) {
+    public Pokemono(String name, String type, int level, double hp) {
+        this.hp = hp;
         this.name = name;
         this.type = type;
         this.level = level;
@@ -24,6 +25,14 @@ public class Pokemono {
         calcLevel();
         //printAtributes();
     }        
+
+    public double getHp() {
+        return hp;
+    }
+
+    public void setHp(double hp) {
+        this.hp = hp;
+    }
     public String getName() {
         return name;
     }

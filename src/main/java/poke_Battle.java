@@ -12,14 +12,14 @@ import java.util.Random;
  */
 public class poke_Battle extends javax.swing.JFrame {
         int potion = 3;
-        int foeHP = 100;
-        int mypokeHP = 100;
+        double foeHP = 100;
+        double mypokeHP = 100;
         boolean attackEvent = false;
         int userLevel;
         int foeLevel;
         String userName;
-        Pokemono myPoke = new Pokemono("Snivy","Plant",userLevel);//nome = string tipo = string level = int
-        Pokemono foePoke = new Pokemono("Charizard","Fire",foeLevel);//nome = string tipo = string level = int
+        Pokemono myPoke = new Pokemono("Snivy","Plant",userLevel,mypokeHP);//nome = string tipo = string level = int
+        Pokemono foePoke = new Pokemono("Charizard","Fire",foeLevel,foeHP);//nome = string tipo = string level = int
 
         /**
      * Creates new form poke_Battle
@@ -32,11 +32,17 @@ public class poke_Battle extends javax.swing.JFrame {
         this.userName = userName;
         initComponents();  
         
-        jProgressBar2.setValue(100);
-        jProgressBar3.setValue(100);
+        mypokeHP = myPoke.getHp();
+        foeHP = foePoke.getHp();
+        
+        jProgressBar2.setMaximum((int)foeHP);
+        jProgressBar3.setMaximum((int)mypokeHP);
 
+        jProgressBar2.setValue((int)foeHP);
+        jProgressBar3.setValue((int)mypokeHP);
+
+        
         winButton.setVisible(false);
-        System.out.println(userLevel);
     }
     
     public int getUserLevel() {
@@ -58,6 +64,7 @@ public class poke_Battle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton3 = new javax.swing.JButton();
         winButton = new javax.swing.JToggleButton();
         myPokelabel1 = new javax.swing.JLabel();
         usernameLabel = new javax.swing.JLabel();
@@ -75,6 +82,14 @@ public class poke_Battle extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jButton3.setText("jButton3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 520, -1, -1));
 
         winButton.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         winButton.setText("Você venceu!");
@@ -157,8 +172,8 @@ public class poke_Battle extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Random rand = new Random();
         int foeDamage = (int) ((foeLevel *0.1 * foePoke.getAttack() * 0.1) - myPoke.getDefense()* 0.1);
-        int int_random = rand.nextInt(1000); 
-        if (int_random < 200){
+        int int_random = rand.nextInt(10); 
+        if (int_random <- 2){
             System.out.println("Fugiu!");
             winButton.setText("Fugiu!");
             winButton.setVisible(true);
@@ -167,13 +182,14 @@ public class poke_Battle extends javax.swing.JFrame {
         else{
             System.out.println("Nem fugiu!");
             mypokeHP = mypokeHP - foeDamage;
-            jProgressBar3.setValue(mypokeHP - foeDamage);
+            jProgressBar3.setValue((int)mypokeHP);
             checkWin();
+            System.out.println(mypokeHP);
         }
-      
+
     }//GEN-LAST:event_jButton1ActionPerformed
     private void checkWin(){
-            if (foeHP <= 0){
+        if (foeHP <= 0){
             winButton.setVisible(true);
             System.out.println("Você venceu!");
         }
@@ -189,12 +205,12 @@ public class poke_Battle extends javax.swing.JFrame {
         int damage = (int) ((userLevel *0.1 * myPoke.getAttack() * 0.1) - foePoke.getDefense()* 0.1);
         int foeDamage = (int) ((foeLevel *0.1 * foePoke.getAttack() * 0.1) - myPoke.getDefense()* 0.1);
         foeHP = foeHP - damage;
-        jProgressBar2.setValue(foeHP);
+        jProgressBar2.setValue((int)foeHP);
         mypokeHP = mypokeHP - foeDamage;
-        jProgressBar3.setValue(mypokeHP);
+        jProgressBar3.setValue((int)mypokeHP);
         checkWin();
-        System.out.println(mypokeHP);
-        System.out.println(foeHP);
+        System.out.println("HP do meu pokemon: "+ mypokeHP);
+        System.out.println("HP do inimigo: "+ foeHP);
        // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -209,19 +225,24 @@ public class poke_Battle extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         if (potion > 0){
         potion = potion - 1;
-        mypokeHP = mypokeHP + 20;
-        jProgressBar3.setValue(mypokeHP);
-        if (mypokeHP >100){
-        mypokeHP = 100;
-        jProgressBar3.setValue(mypokeHP);
+        mypokeHP = mypokeHP + 50;
+        jProgressBar3.setValue((int)mypokeHP);
+        if (mypokeHP > myPoke.getHp()){
+        mypokeHP = myPoke.getHp();
+        jProgressBar3.setValue((int)mypokeHP);
         }
-        System.out.println(mypokeHP);
+        System.out.println("HP do meu pokemon: "+ mypokeHP);
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void winButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_winButtonActionPerformed
 
     }//GEN-LAST:event_winButtonActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        System.out.println(foeHP);
+        System.out.println(mypokeHP);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,6 +291,7 @@ public class poke_Battle extends javax.swing.JFrame {
     private javax.swing.JLabel charmander;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
