@@ -64,7 +64,6 @@ public class poke_Battle extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton3 = new javax.swing.JButton();
         winButton = new javax.swing.JToggleButton();
         myPokelabel1 = new javax.swing.JLabel();
         usernameLabel = new javax.swing.JLabel();
@@ -82,14 +81,6 @@ public class poke_Battle extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jButton3.setText("jButton3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 520, -1, -1));
 
         winButton.setFont(new java.awt.Font("Segoe UI", 0, 48)); // NOI18N
         winButton.setText("Você venceu!");
@@ -239,11 +230,6 @@ public class poke_Battle extends javax.swing.JFrame {
 
     }//GEN-LAST:event_winButtonActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        System.out.println(foeHP);
-        System.out.println(mypokeHP);
-    }//GEN-LAST:event_jButton3ActionPerformed
-
     /**
      * @param args the command line arguments
      */
@@ -291,7 +277,6 @@ public class poke_Battle extends javax.swing.JFrame {
     private javax.swing.JLabel charmander;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
