@@ -41,7 +41,6 @@ public class poke_Battle extends javax.swing.JFrame {
         jProgressBar2.setValue((int)foeHP);
         jProgressBar3.setValue((int)mypokeHP);
 
-        
         winButton.setVisible(false);
     }
     
@@ -164,7 +163,7 @@ public class poke_Battle extends javax.swing.JFrame {
         Random rand = new Random();
         int foeDamage = (int) ((foeLevel *0.1 * foePoke.getAttack() * 0.1) - myPoke.getDefense()* 0.1);
         int int_random = rand.nextInt(10); 
-        if (int_random <- 2){
+        if (int_random <= 2){
             System.out.println("Fugiu!");
             winButton.setText("Fugiu!");
             winButton.setVisible(true);
