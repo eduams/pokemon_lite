@@ -134,7 +134,7 @@
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\eduar\OneDrive\Desktop\pokemonProject\UI\HPhero.png"/>
+          <Image iconType="2" name="C:\Users\eduar\OneDrive\Documentos\NetBeansProjects\pokemon_lite\src\main\java\HPhero.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
@@ -147,7 +147,7 @@
     <Component class="javax.swing.JLabel" name="jLabel4">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\eduar\OneDrive\Desktop\pokemonProject\UI\HPfoe.png"/>
+          <Image iconType="2" name="C:\Users\eduar\OneDrive\Documentos\NetBeansProjects\pokemon_lite\src\main\java\HPfoe.png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -209,7 +209,7 @@
     <Component class="javax.swing.JLabel" name="charmander">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\eduar\OneDrive\Desktop\pokemonProject\pokes\charmander.gif"/>
+          <Image iconType="2" name="C:\Users\eduar\OneDrive\Documentos\NetBeansProjects\pokemon_lite\src\main\java\charmander.gif"/>
         </Property>
       </Properties>
       <Constraints>
@@ -221,7 +221,7 @@
     <Component class="javax.swing.JLabel" name="jLabel3">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\eduar\OneDrive\Desktop\pokemonProject\pokes\snivy.gif"/>
+          <Image iconType="2" name="C:\Users\eduar\OneDrive\Documentos\NetBeansProjects\pokemon_lite\src\main\java\snivy.gif"/>
         </Property>
       </Properties>
       <Constraints>
@@ -233,7 +233,7 @@
     <Component class="javax.swing.JLabel" name="jLabel1">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\eduar\OneDrive\Desktop\pokemonProject\background.png"/>
+          <Image iconType="2" name="C:\Users\eduar\OneDrive\Documentos\NetBeansProjects\pokemon_lite\src\main\java\background.png"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>

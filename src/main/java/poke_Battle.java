@@ -111,11 +111,11 @@ public class poke_Battle extends javax.swing.JFrame {
         getContentPane().add(jProgressBar2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, 240, 10));
         getContentPane().add(jProgressBar3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 310, 240, 10));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\OneDrive\\Desktop\\pokemonProject\\UI\\HPhero.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\OneDrive\\Documentos\\NetBeansProjects\\pokemon_lite\\src\\main\\java\\HPhero.png")); // NOI18N
         jLabel2.setText("jLabel2");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 250, 550, -1));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\OneDrive\\Desktop\\pokemonProject\\UI\\HPfoe.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\OneDrive\\Documentos\\NetBeansProjects\\pokemon_lite\\src\\main\\java\\HPfoe.png")); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-90, 100, -1, -1));
 
         jButton1.setFont(new java.awt.Font("Yu Gothic UI Semibold", 0, 24)); // NOI18N
@@ -145,13 +145,13 @@ public class poke_Battle extends javax.swing.JFrame {
         });
         getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 400, 170, 50));
 
-        charmander.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\OneDrive\\Desktop\\pokemonProject\\pokes\\charmander.gif")); // NOI18N
+        charmander.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\OneDrive\\Documentos\\NetBeansProjects\\pokemon_lite\\src\\main\\java\\charmander.gif")); // NOI18N
         getContentPane().add(charmander, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 100, 180, 160));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\OneDrive\\Desktop\\pokemonProject\\pokes\\snivy.gif")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\OneDrive\\Documentos\\NetBeansProjects\\pokemon_lite\\src\\main\\java\\snivy.gif")); // NOI18N
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, -1, -1));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\OneDrive\\Desktop\\pokemonProject\\background.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\eduar\\OneDrive\\Documentos\\NetBeansProjects\\pokemon_lite\\src\\main\\java\\background.png")); // NOI18N
         jLabel1.setText("jLabel1");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -30, 870, 570));
 
